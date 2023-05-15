@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "46596c5c-d768-4ceb-9630-a33bdf3185d1",
+		"_postman_id": "c603f661-527a-4d70-a037-63d1e6320470",
 		"name": "Post_API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "21191801"
@@ -151,6 +151,44 @@
 						{
 							"key": "pageSize",
 							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sorting Get All Posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/posts?pageNo=1&pageSize=3&sortBy=title&sortDir=desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"posts"
+					],
+					"query": [
+						{
+							"key": "pageNo",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "3"
+						},
+						{
+							"key": "sortBy",
+							"value": "title"
+						},
+						{
+							"key": "sortDir",
+							"value": "desc"
 						}
 					]
 				}
