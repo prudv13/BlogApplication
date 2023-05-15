@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"My 4th Post\",\r\n    \"description\": \"4th post description\",\r\n    \"content\": \"This is my 4th post\"\r\n}",
+					"raw": "{\r\n    \"title\": \"My 13th Post\",\r\n    \"description\": \"13th post description\",\r\n    \"content\": \"This is my 13th post\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -61,7 +61,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/posts/1",
+					"raw": "http://localhost:8080/api/posts/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -70,7 +70,7 @@
 					"path": [
 						"api",
 						"posts",
-						"1"
+						"2"
 					]
 				}
 			},
@@ -122,6 +122,36 @@
 						"api",
 						"posts",
 						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Paging Get All Posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/posts?pageNo=1&pageSize=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"posts"
+					],
+					"query": [
+						{
+							"key": "pageNo",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "5"
+						}
 					]
 				}
 			},
