@@ -3,6 +3,7 @@ package com.springboot.BlogApplication.Controller;
 import com.springboot.BlogApplication.DTO.CommentDTO;
 import com.springboot.BlogApplication.Service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,5 +25,11 @@ public class CommentController {
     @GetMapping("/posts/{postId}/comments")
     public List<CommentDTO> getCommentsByPostId(@PathVariable(value = "postId") Long postId){
         return commentService.getCommentsByPostId(postId);
+    }
+
+    @GetMapping("/posts/{postId}/comments/{commentId}")
+    public ResponseEntity<CommentDTO> getCommentById(@PathVariable(value = "postId") Long postId, @PathVariable(value = "commentId") Long commentId){
+        CommentDTO commentDTO = commentService.getCommentById(postId, commentId);
+        return new ResponseEntity<>(commentDTO, HttpStatus.OK);
     }
 }
