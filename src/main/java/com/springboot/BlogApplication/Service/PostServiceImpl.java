@@ -5,6 +5,7 @@ import com.springboot.BlogApplication.Entity.Post;
 import com.springboot.BlogApplication.Exception.ResourceNotFoundException;
 import com.springboot.BlogApplication.Payload.PostResponse;
 import com.springboot.BlogApplication.Repository.PostRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -20,22 +21,18 @@ public class PostServiceImpl implements PostService{
     @Autowired
     private PostRepository postRepository;
 
+    @Autowired
+    private ModelMapper modelMapper;
+
     // convert Entity to DTO
     private PostDTO mapToDTO(Post post){
-        PostDTO postDTO = new PostDTO();
-        postDTO.setId(post.getId());
-        postDTO.setTitle(post.getTitle());
-        postDTO.setDescription(post.getDescription());
-        postDTO.setContent(post.getContent());
+        PostDTO postDTO = modelMapper.map(post, PostDTO.class);
         return postDTO;
     }
 
     // convert DTO to entity
     private Post mapToEntity(PostDTO postDTO){
-        Post post = new Post();
-        post.setTitle(postDTO.getTitle());
-        post.setDescription(postDTO.getDescription());
-        post.setContent(postDTO.getContent());
+        Post post = modelMapper.map(postDTO, Post.class);
         return post;
     }
 
