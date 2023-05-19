@@ -2,6 +2,7 @@ package com.springboot.BlogApplication.DTO;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 import java.util.Set;
@@ -11,11 +12,11 @@ public class PostDTO {
     private Long id;
 
     @NotEmpty
-    @Min(value = 2, message = "Post Title should have at least 2 characters")
+    @Size(min = 2, message = "Post Title should have at least 2 characters")
     private String title;
 
     @NotEmpty
-    @Min(value = 10, message = "Post description should have at least 10 characters")
+    @Size(min = 10, message = "Post description should have at least 10 characters")
     private String description;
 
     @NotEmpty
