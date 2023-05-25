@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"usernameOrEmail\": \"prudhvi1522@gmail.com\",\r\n    \"password\": \"prudhvi\"\r\n}",
+					"raw": "{\r\n    \"usernameOrEmail\": \"brittany@gmail.com\",\r\n    \"password\": \"brittany\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -61,6 +61,66 @@
 						"api",
 						"auth",
 						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Authentication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"tony\",\r\n    \"username\": \"tony\",\r\n    \"email\": \"tonystark@gmail.com\",\r\n    \"password\": \"tony\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signup Authentication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"brittany\",\r\n    \"username\": \"brittany\",\r\n    \"email\": \"brittany@gmail.com\",\r\n    \"password\": \"brittany\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
 					]
 				}
 			},
