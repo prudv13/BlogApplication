@@ -2,6 +2,7 @@ package com.springboot.BlogApplication.Controller;
 
 import com.springboot.BlogApplication.DTO.LoginDTO;
 import com.springboot.BlogApplication.DTO.RegisterDTO;
+import com.springboot.BlogApplication.Payload.JwtAuthResponse;
 import com.springboot.BlogApplication.Service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,9 +20,11 @@ public class AuthController {
     private AuthService authService;
 
     @PostMapping(value = {"/login", "/signin"})
-    public ResponseEntity<String> login(@RequestBody LoginDTO loginDTO){
-        String response = authService.login(loginDTO);
-        return new ResponseEntity<String>(response, HttpStatus.OK);
+    public ResponseEntity<JwtAuthResponse> login(@RequestBody LoginDTO loginDTO){
+        String token = authService.login(loginDTO);
+        JwtAuthResponse jwtAuthResponse = new JwtAuthResponse();
+        jwtAuthResponse.setAccessToken(token);
+        return new ResponseEntity<>(jwtAuthResponse, HttpStatus.OK);
     }
 
     @PostMapping(value = {"/register", "/signup"})
