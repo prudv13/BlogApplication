@@ -7,6 +7,7 @@ import com.springboot.BlogApplication.Entity.User;
 import com.springboot.BlogApplication.Exception.BlogAPIException;
 import com.springboot.BlogApplication.Repository.RoleRepository;
 import com.springboot.BlogApplication.Repository.UserRepository;
+import com.springboot.BlogApplication.Security.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -34,13 +35,17 @@ public class AuthServiceImpl implements AuthService{
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    private JwtTokenProvider jwtTokenProvider;
+
     @Override
     public String login(LoginDTO loginDTO) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                 loginDTO.getUsernameOrEmail(), loginDTO.getPassword()
         ));
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        return "User Logged-In Successfully";
+        String token = jwtTokenProvider.generateToken(authentication);
+        return token;
     }
 
     @Override
