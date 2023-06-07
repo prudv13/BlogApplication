@@ -56,7 +56,7 @@ public class PostController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @SecurityRequirement(name = "Bearer Authentication")
-    @Operation(summary = "Update Post REST API", description = "This API is used to update an existing post from the database")
+    @Operation(summary = "Update Post REST API", description = "This API is used to update an existing post in the database")
     @ApiResponse(responseCode = "200", description = "Http Status 200 OK")
     @PutMapping("/{id}")
     public ResponseEntity<PostDTO> updatePost(@Valid @RequestBody PostDTO postDTO, @PathVariable(name = "id") Long id){
@@ -66,7 +66,7 @@ public class PostController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @SecurityRequirement(name = "Bearer Authentication")
-    @Operation(summary = "Delete Post REST API", description = "This API is used to delete an existing post from the database")
+    @Operation(summary = "Delete Post REST API", description = "This API is used to delete an existing post in the database")
     @ApiResponse(responseCode = "200", description = "Http Status 200 OK")
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deletePostById(@PathVariable(name = "id") Long id){
