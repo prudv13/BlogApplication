@@ -35,10 +35,8 @@ The application is developed using the following dependencies:
 - spring-boot-starter-test
 - spring-boot-maven-plugin
 
-## All of the dependencies required for any spring boot project can be found in -
-## [MAVEN REPOSITORY](https://mvnrepository.com/)
-##
-##
+All of the dependencies required for any spring boot project can be found in - [MAVEN REPOSITORY](https://mvnrepository.com/)
+
 ## Installations & Tools
 
 | Plugin | Links |
