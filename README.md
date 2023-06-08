@@ -44,6 +44,7 @@ All of the dependencies required for any spring boot project can be found in - [
 | JAVA Openjdk 17 | [www.oracle.com/java](https://www.oracle.com/java/technologies/downloads/#java17) |
 | Spring Initializr | [www.start.spring.io](https://start.spring.io/) |
 | IntelliJ Idea IDE | [www.jetbrains.com/idea/](https://www.jetbrains.com/idea/) |
+| Postman | [www.postman.com/](https://www.postman.com/downloads/) |
 | MySQL Community Edition | [www.mysql.com](https://dev.mysql.com/downloads/mysql/) |
 | Docker Desktop | [www.docker.com](https://www.docker.com/products/docker-desktop/) |
 
